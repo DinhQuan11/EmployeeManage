@@ -51,11 +51,11 @@ void menuAdmin()
 	cout << "***************" << endl;
 
 	setColor(0, 13);
-	cout << endl << setw(18) << "1. " << "Them Employee" << endl;
-	cout << setw(18) << "2. " << "Xoa Employee" << endl;
-	cout << setw(18) << "3. " << "Tim Employee" << endl;
-	cout << setw(18) << "4. " << "Cap nhat Employee" << endl;
-	cout << setw(18) << "5. " << "Hien thi thong tin Employee" << endl;
+	cout << endl << setw(18) << "1. " << "Them Nhan vien" << endl;
+	cout << setw(18) << "2. " << "Xoa Nhan vien" << endl;
+	cout << setw(18) << "3. " << "Tim Nhan vien" << endl;
+	cout << setw(18) << "4. " << "Cap nhat Nhan vien" << endl;
+	cout << setw(18) << "5. " << "Hien thi thong tin Nhan vien" << endl;
 	cout << setw(18) << "6. " << "Thoat!" << endl;
 
 	setColor(0, 14);
@@ -165,9 +165,9 @@ bool isUsernameEmployee(User* user, string strUserName)
 void addEmployee(User* user)
 {
 	setColor(0, 13);
-	cout << endl << setw(19) << "" << "~~~~~ Them Employee ~~~~~\n" << endl;
+	cout << endl << setw(19) << "" << "~~~~~ Them Nhan vien ~~~~~\n" << endl;
 	setColor(0, 9);
-	cout << setw(18) << "" << "Nhap ten Employee muon them: " << endl;
+	cout << setw(18) << "" << "Nhap Username Nhan vien muon them: " << endl;
 	cout << setw(18) << " -> ";
 
 	string strAcc;
@@ -176,7 +176,7 @@ void addEmployee(User* user)
 	if (isUsernameEmployee(user, strAcc)) // Nếu user đã tồn tại
 	{
 		setColor(0, 12);
-		cout << endl << setw(18) << " (!) " << "User name da ton tai!";
+		cout << endl << setw(18) << " (!) " << "Username Nhan vien da ton tai!";
 	}
 	else
 	{
@@ -193,7 +193,7 @@ void addEmployee(User* user)
 		outFile.close();
 
 		setColor(0, 10);
-		cout << endl << setw(18) << " (!) " << "Them thanh cong!" << endl;
+		cout << endl << setw(18) << " (!) " << "Them Nhan vien thanh cong!" << endl;
 		delete empl;
 	}
 }
@@ -246,7 +246,7 @@ void removeEmployee(User* user, string strUserName)
 
 
 	setColor(0, 10);
-	cout << endl << setw(18) << " (!) " << "Xoa thanh cong!" << endl;
+	cout << endl << setw(18) << " (!) " << "Xoa Nhan vien thanh cong!" << endl;
 
 	remove("Temp.txt"); // Xóa file Employees copy
 }
@@ -259,7 +259,7 @@ void searchEmployee(User* user, string strUserName)
 	user->readFileUser(inFile); // Đọc file
 
 	setColor(0, 11);
-	cout << endl << setw(18) << "" << "Thong tin cua Employee muon tim:" << endl << endl;
+	cout << endl << setw(18) << "" << "Thong tin cua Nhan vien muon tim:" << endl << endl;
 
 	cout << setw(10) << left << "";
 	cout << setw(25) << left << "Ho ten";
@@ -290,10 +290,10 @@ void updateEmployee(User* user)
 	inFile.open("Employees.txt", ios_base::in); // Mở file
 
 	setColor(0, 13);
-	cout << endl << setw(19) << "" << "~~~~~ Cap nhat Employee ~~~~~\n" << endl;
+	cout << endl << setw(19) << "" << "~~~~~ Cap nhat Nhan vien ~~~~~\n" << endl;
 
 	setColor(0, 9);
-	cout << setw(18) << "" << "Nhap ten Employee muon cap nhat:" << endl;
+	cout << setw(18) << "" << "Nhap Username Nhan vien muon cap nhat:" << endl;
 	cout << setw(18) << " -> ";
 
 	string strUserName;
@@ -353,7 +353,7 @@ void updateEmployee(User* user)
 				delete user;
 
 				setColor(0, 10);
-				cout << endl << setw(18) << " (!) " << "Cap nhat ho ten Employee thanh cong!" << endl;
+				cout << endl << setw(18) << " (!) " << "Cap nhat ho ten Nhan vien thanh cong!" << endl;
 				remove("Temp.txt"); // Xóa file Temp.txt
 				break;
 			}
@@ -395,7 +395,7 @@ void updateEmployee(User* user)
 				delete user;
 
 				setColor(0, 10);
-				cout << endl << setw(18) << " (!) " << "Cap nhat dia chi Employee thanh cong!" << endl;
+				cout << endl << setw(18) << " (!) " << "Cap nhat dia chi Nhan vien thanh cong!" << endl;
 				remove("Temp.txt"); // Xóa file Temp.txt
 				break;
 			}
@@ -437,7 +437,7 @@ void updateEmployee(User* user)
 				delete user;
 
 				setColor(0, 10);
-				cout << endl << setw(18) << " (!) " << "Cap nhat so dien thoai Employee thanh cong!" << endl;
+				cout << endl << setw(18) << " (!) " << "Cap nhat so dien thoai Nhan vien thanh cong!" << endl;
 				remove("Temp.txt"); // Xóa file Temp.txt
 				break;
 			}
@@ -479,7 +479,7 @@ void updateEmployee(User* user)
 				delete user;
 
 				setColor(0, 10);
-				cout << endl << setw(18) << " (!) " << "Cap nhat email Employee thanh cong!" << endl;
+				cout << endl << setw(18) << " (!) " << "Cap nhat email Nhan vien thanh cong!" << endl;
 				remove("Temp.txt"); // Xóa file Temp.txt
 				break;
 			}
@@ -494,7 +494,7 @@ void updateEmployee(User* user)
 	else
 	{
 		setColor(0, 12);
-		cout << endl << setw(18) << " (!) " << "Employee khong ton tai!" << endl;
+		cout << endl << setw(18) << " (!) " << "Username Nhan vien khong ton tai!" << endl;
 	}
 }
 
@@ -514,9 +514,9 @@ void showAllEmployee(User* user)
 	inFile.close();
 
 	setColor(0, 13);
-	cout << endl << setw(18) << "" << "~~~~~ Hien thi thong tin Employee ~~~~~" << endl;
+	cout << endl << setw(18) << "" << "~~~~~ Hien thi thong tin Nhan vien ~~~~~" << endl;
 	setColor(0, 11);
-	cout << endl << setw(23) << "" << "Thong tin cua tat ca Employee:" << endl << endl;
+	cout << endl << setw(23) << "" << "Thong tin cua tat ca Nhan vien:" << endl << endl;
 
 	cout << setw(10) << left << "";
 	cout << setw(25) << left << "Ho ten";
@@ -745,9 +745,9 @@ void mainMenu(User* listUser[])
 					{
 						system("cls"); // Clear màn hình console
 						setColor(0, 13);
-						cout << endl << setw(19) << "" << "~~~~~ Xoa Employee ~~~~~\n" << endl;
+						cout << endl << setw(19) << "" << "~~~~~ Xoa Nhan vien ~~~~~\n" << endl;
 						setColor(0, 9);
-						cout << setw(18) << "" << "Nhap ten Employee muon xoa:" << endl;
+						cout << setw(18) << "" << "Nhap ten Username Nhan vien muon xoa:" << endl;
 						cout << setw(18) << " -> ";
 
 						string strUserName;
@@ -760,7 +760,7 @@ void mainMenu(User* listUser[])
 						else
 						{
 							setColor(0, 12);
-							cout << endl << setw(18) << " (!) " << "Employee khong ton tai!" << endl;
+							cout << endl << setw(18) << " (!) " << "Username Nhan vien khong ton tai!" << endl;
 						}
 						char cNotification = _getch(); // Dừng màn hình để thông báo
 						break;
@@ -769,9 +769,9 @@ void mainMenu(User* listUser[])
 					{
 						system("cls"); // Clear màn hình console
 						setColor(0, 13);
-						cout << endl << setw(19) << "" << "~~~~~ Tim Employee ~~~~~\n" << endl;
+						cout << endl << setw(19) << "" << "~~~~~ Tim Nhan vien ~~~~~\n" << endl;
 						setColor(0, 9);
-						cout << setw(18) << "" << "Nhap ten Employee muon tim:" << endl;
+						cout << setw(18) << "" << "Nhap ten Username Nhan vien muon tim:" << endl;
 						cout << setw(18) << " -> ";
 
 						string strUserName;
@@ -784,7 +784,7 @@ void mainMenu(User* listUser[])
 						else
 						{
 							setColor(0, 12);
-							cout << endl << setw(18) << " (!) " << "Employee khong ton tai!" << endl;
+							cout << endl << setw(18) << " (!) " << "Username Nhan vien khong ton tai!" << endl;
 						}
 						char cNotification = _getch(); // Dừng màn hình để thông báo
 						break;

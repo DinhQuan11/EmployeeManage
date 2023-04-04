@@ -83,7 +83,7 @@ void User::inputInfo()
 	cin.ignore();
 
 	setColor(0, 11);
-	cout << endl << setw(18) << "" << "Nhap thong tin User:" << endl;
+	cout << endl << setw(18) << "" << "Nhap thong tin Nhan vien:" << endl;
 
 	cout << setw(18) << " -> " << "Ho ten: \t";
 	getline(cin, strName);
